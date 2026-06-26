@@ -1,0 +1,106 @@
+
+/*홈페이지*/
+.card {
+    margin : 30px auto;
+    display : flex;
+}
+.card img {
+    width : 150px;
+    margin-right : 20px;
+}
+
+/*공지사항*/
+.notice-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+.notice-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid #333;
+    table-layout: fixed;
+}
+
+.notice-table th {
+    background-color: #f2f2f2;
+    padding: 14px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.notice-table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 번호 칸 */
+.notice-table th:first-child,
+.notice-table td:first-child {
+    width: 60px;
+    text-align: center;
+}
+
+/* 날짜 칸 */
+.notice-table th:last-child,
+.notice-table td:last-child {
+    width: 130px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* 제목 칸 */
+.notice-title {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notice-table tr:hover {
+    background-color: #fafafa;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+.nav {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    font-family : 'Montserrat';
+}
+.nav a {
+    margin-right: 10px;
+    text-decoration : none;
+    font-weight : 400;
+    letter-spacing : -0.5px;
+}
+.nav .logo {
+    font-weight : 800;
+}
+
+input, button {
+    padding : 8px 13px;
+    margin-top : 5px;
+    border : 1px solid grey;
+    border-radius : 4px;
+    vertical-align : middle;
+}
+button {
+    background : black;
+    color : white;
+    border : none;
+    cursor: pointer;
+}
+input {
+    display : block;
+}
+
+.detail {
+    text-align : center;
+}
+.detail img{
+    max-width : 30%;
+    display : block;
+    margin : auto;
+}

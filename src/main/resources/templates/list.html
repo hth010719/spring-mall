@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div th:replace="~{nav.html::navbar}"></div>
+<div class="card" th:each="i : ${items}">
+  <img src="https://placehold.co/300">
+  <div>
+      <hr>
+    <h4 th:text="${i.title}"></h4>
+      <a th:href="@{'/detail/'+ ${i.id} }">상세보기</a>
+    <p th:text="|${i.price}원|"></p>
+      <a th:href="@{'/update/'+${i.id}}">수정✏️</a>
+      <div>
+          <button class="btn" th:data-id="${i.id}">삭제</button>
+      </div>
+
+  </div>
+</div>
+
+    <script>
+        document.querySelectorAll('.btn').forEach((button)=>{
+            button.addEventListener('click',async function(){
+                const id = button.dataset.id;
+                const response = await fetch('/delete/'+id,{
+                    method:'DELETE'
+                });
+
+                if (response.ok){
+                    location.reload();
+                }
+
+            });
+        });
+    </script>
+
+</body>
+</html>

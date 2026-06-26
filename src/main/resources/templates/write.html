@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>itemlist</title>
+  <link rel="stylesheet" href="/main.css">
+
+</head>
+<body>
+
+<div th:replace="~{nav.html::navbar}"></div>
+<p th:if="${error}" th:text="${error}"></p>
+<form action="/add" method="POST">
+  <input name="title">
+  <input name="price">
+  <button type="submit">전송</button>
+</form>
+
+</body>
+</html>

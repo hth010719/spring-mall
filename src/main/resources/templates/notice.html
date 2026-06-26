@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+    <div th:replace="~{nav.html::navbar}"></div>
+
+<div class="notice-container">
+    <h2>공지사항</h2>
+
+    <table class="notice-table">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>글제목</th>
+            <th>날짜</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="n : ${notices}">
+            <td th:text="${n.id}">1</td>
+            <td class="notice-title" th:text="${n.title}">이번 주 할인이벤트합니다</td>
+            <td th:text="${n.date}">2030-01-02</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

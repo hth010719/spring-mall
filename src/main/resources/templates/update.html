@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Update</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+<div th:replace="~{nav.html::navbar}"></div>
+
+<p th:if="${error}" th:text="${error}"></p>
+<form th:action="@{'/update/' + ${data.id}}" method="POST">
+  <input name="title" th:value="${data.title}">
+  <input name="price" th:value="${data.price}">
+  <button type="submit">수정</button>
+</form>
+
+</body>
+</html>
